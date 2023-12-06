@@ -130,10 +130,10 @@ html, body {
 		position: absolute;
 		color: white;
 		font-family: 'Dancing Script', cursive;
-		opacity: 0; /* начальное состояние текста - невидимый */
+		opacity: 0;
 	  }
 	  
-	   /* Определите анимацию для появления и исчезания текста */
+	  
 	  @keyframes fadeInOut {
 		0%, to {
 		  opacity: 0;
@@ -143,7 +143,7 @@ html, body {
 		}
 	  }
 	  
-	  /* Определите анимацию для случайного движения */
+	  
 	  @keyframes randomMove {
 		from {
 		  transform: translate(0, 0);
@@ -155,9 +155,64 @@ html, body {
 	  
 	  .button-hidden {
 		opacity: 0;
-		transition: opacity 4s ease-in-out; /* Плавный переход прозрачности за 2 секунды */
+		transition: opacity 4s ease-in-out; 
 	  }
 	  
 	  .button-visible {
 		opacity: 1;
 	  }
+
+	  /* Container for the entire countdown timer */
+/* Container for the entire countdown timer */
+.countdown-container {
+	display: flex; /* Use flexbox to align children */
+	justify-content: center; /* Center children horizontally */
+	align-items: center; /* Center children vertically */
+	position: absolute; /* Position the container absolutely */
+	top: 22%; /* Position at the middle of the screen vertically */
+	left: 50%; /* Position at the middle of the screen horizontally */
+	transform: translate(-50%, -50%); /* Center the container exactly */
+	background-color: transparent; /* No background color */
+  }
+  
+  /* Individual containers for each set of numbers and labels */
+  .countdown-item {
+	display: flex; /* Use flexbox to align number and label */
+	flex-direction: column; /* Stack number and label vertically */
+	align-items: center; /* Center items in the flex container */
+	margin: 0 10px; /* Add some horizontal space between items */
+  }
+  
+  /* Style for the countdown numbers */
+  .countdown-time {
+	font-size: 6em; /* Larger font size for the numbers */
+	color: #fff; /* White text color */
+	font-family: 'Snow Sticks';
+  }
+  
+  /* Style for the labels under the numbers */
+  .countdown-label {
+	font-size: 1.5em; /* Smaller font size for labels */
+	color: #fff; /* White text color */
+  }
+
+/* Styles for large screens remain unchanged */
+
+/* Media query for small screens, such as mobile devices */
+@media (max-width: 600px) {
+	/* Decrease the font size for the countdown numbers */
+	.countdown-time {
+	  font-size: 2.8em; /* Smaller than on larger screens */
+	}
+  
+	/* Decrease the font size for the labels */
+	.countdown-label {
+	  font-size: 1em; /* Smaller than on larger screens */
+	}
+  
+	/* Decrease margins between countdown items */
+	.countdown-item {
+	  margin: 0 5px; /* Smaller than on larger screens */
+	}
+  }
+
